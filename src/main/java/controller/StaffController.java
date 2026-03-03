@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StaffController {
 
-    @GetMapping("/index")
+    @GetMapping("/team")
     public String index() {
         return "Toby, Katerina, Sandy";
     }
