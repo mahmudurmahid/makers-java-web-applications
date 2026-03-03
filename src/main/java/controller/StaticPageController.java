@@ -11,7 +11,7 @@ public class StaticPageController {
     }
 
     @GetMapping("/contactus")
-    public String contactUs() {
+    public String contactUsPage() {
         return "thisisnotarealemail@notanemail.com";
     }
 }
