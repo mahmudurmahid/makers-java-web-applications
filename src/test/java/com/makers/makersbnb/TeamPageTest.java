@@ -11,7 +11,7 @@ public class TeamPageTest {
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
-       te browser = playwright.chromium().launch();
+       browser = playwright.chromium().launch();
     }
 
     @AfterAll
