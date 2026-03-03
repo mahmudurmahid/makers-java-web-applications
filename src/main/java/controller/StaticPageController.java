@@ -17,7 +17,10 @@ public class StaticPageController {
     }
 
     @GetMapping("/contactus")
-    public String contactUsPage() {
-        return "thisisnotarealemail@notanemail.com";
+    public ModelAndView contactUsPage() {
+        ModelAndView modelAndView = new ModelAndView("/ContactUs");
+        String email = "thisisnotarealemail@notanemail.com";
+        modelAndView.addObject("email", email);
+        return  modelAndView;
     }
 }
