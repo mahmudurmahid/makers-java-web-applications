@@ -11,7 +11,7 @@ public class TeamPageTest {
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
-        browser = playwright.chromium().launch();
+       te browser = playwright.chromium().launch();
     }
 
     @AfterAll
@@ -28,5 +28,12 @@ public class TeamPageTest {
     @AfterEach
     void closeContext() {
         context.close();
+    }
+
+    @Test
+    public void UserCanSeeTeamMemberNames() {
+        page.navigate("http://localhost:8080/team");
+        Locator pageBody = page.locator("body");
+        assertThat(pageBody).containsText("Toby, Katerina, Sandy");
     }
 }
