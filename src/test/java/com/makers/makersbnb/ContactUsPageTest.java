@@ -29,4 +29,11 @@ public class ContactUsPageTest {
     void closeContext() {
         context.close();
     }
+
+    @Test
+    public void userCanSeeAnEmailAddress() {
+        page.navigate("http://localhost:8080/contactus");
+        Locator pageBody = page.locator("body");
+        assertThat(pageBody).containsText("thisisnotarealemail@notanemail.com");
+    }
 }
