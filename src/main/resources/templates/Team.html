@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>MakersBnB</title>
+</head>
+
+<body>
+
+<h1>Members of Our Team</h1>
+<ul>
+    <!-- using th:each we tell Thymeleaf to render an li for each review -->
+    <li th:each="team : ${teamMembers}" th:text="${team}"></li>
+</ul>
+
+</body>
+
+</html>
