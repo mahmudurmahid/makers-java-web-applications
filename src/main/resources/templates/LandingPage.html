@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-<!-- this line prevents IntelliJ from complaining about thymeleaf syntax -->
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -9,10 +8,14 @@
 
 <body>
 
-<h1>Welcome to MakersBnB</h1>
-<!-- th:text is a Thymeleaf atttribute used to generate the actual `h3` text -->
-<!-- within it, we use nSpaces which was passed in from the controller -->
+<h1>Welcome to MakersBnB!</h1>
 <h3 th:text="${nSpaces} + ' spaces are waiting to be discovered'"></h3>
+
+<h4>Recent reviews</h4>
+<ul>
+    <!-- using th:each we tell Thymeleaf to render an li for each review -->
+    <li th:each="review : ${reviews}" th:text="${review}"></li>
+</ul>
 
 </body>
 
