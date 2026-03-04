@@ -1,4 +1,4 @@
-package model;
+package com.makers.makersbnb.model;
 
 import jakarta.persistence.*;
 

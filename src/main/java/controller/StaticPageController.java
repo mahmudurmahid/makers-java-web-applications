@@ -1,11 +1,16 @@
 package com.makers.makersbnb;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import com.makers.makersbnb.repository.SpaceRepository;
 
 @RestController
 public class StaticPageController {
+    @Autowired
+    SpaceRepository spaceRepository;
+
     @GetMapping("/")
     public ModelAndView landingPage() {
         ModelAndView modelAndView = new ModelAndView("/LandingPage");
