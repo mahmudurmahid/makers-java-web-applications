@@ -2,6 +2,8 @@ package com.makers.makersbnb;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "SPACES")
 public class Space {
@@ -9,10 +11,14 @@ public class Space {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String description;
+    private BigDecimal price;
     public Space() {}
 
-    public Space(String name) {
+    public Space(String name, String description, BigDecimal price) {
         this.name = name;
+        this.description = description;
+        this.price = price;
     }
 
     public String getName() {
@@ -20,5 +26,19 @@ public class Space {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BigDecimal getPrice() {
+        return this.price;
+    }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
