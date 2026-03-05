@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spaces</title>
+</head>
+
+<body>
+
+<h1>Here are our spaces</h1>
+<h3 th:text="${nSpaces} + ' spaces are waiting to be discovered'"></h3>
+
+<h4>Recent reviews</h4>
+<ul>
+    <!-- using th:each we tell Thymeleaf to render an li for each review -->
+    <li th:each="review : ${reviews}" th:text="${review}"></li>
+</ul>
+
+</body>
+
+</html>
