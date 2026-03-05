@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import com.makers.makersbnb.repository.SpaceRepository;
+import com.makers.makersbnb.model.Space;
+import java.util.List;
 
 @RestController
 public class StaticPageController {
@@ -12,9 +14,9 @@ public class StaticPageController {
     SpaceRepository spaceRepository;
 
     @GetMapping("/")
-    public ModelAndView landingPage() {
+    public ModelAndView welcome() {
         ModelAndView modelAndView = new ModelAndView("/LandingPage");
-        Integer nSpaces = 100;
+        Integer nSpaces = ((List<Space>) spaceRepository.findAll()).size();
         modelAndView.addObject("nSpaces", nSpaces);
         String[] reviews = new String[] {"Awesome", "Nice", "Perfect"};
         modelAndView.addObject("reviews", reviews);
