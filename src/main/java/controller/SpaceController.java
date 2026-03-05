@@ -20,4 +20,13 @@ public class SpaceController {
         modelAndView.addObject("spaces", spaceRepository.findAll());
         return modelAndView;
     }
+
+    @GetMapping("/spaces/new")
+    public ModelAndView newSpaceForm() {
+        // this is the space referred to in th:object (look back at the form code)
+        Space space = new Space();
+        ModelAndView newSpaceForm = new ModelAndView("spaces/new");
+        newSpaceForm.addObject("space", space);
+        return newSpaceForm;
+    }
 }
