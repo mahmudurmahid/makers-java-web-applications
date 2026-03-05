@@ -16,7 +16,7 @@ public class StaticPageController {
     @GetMapping("/")
     public ModelAndView welcome() {
         ModelAndView modelAndView = new ModelAndView("/LandingPage");
-        Integer nSpaces = ((List<Space>) spaceRepository.findAll()).size();
+        Integer nSpaces = (int) spaceRepository.count();
         modelAndView.addObject("nSpaces", nSpaces);
         String[] reviews = new String[] {"Awesome", "Nice", "Perfect"};
         modelAndView.addObject("reviews", reviews);
