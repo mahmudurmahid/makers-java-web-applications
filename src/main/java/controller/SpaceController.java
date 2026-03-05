@@ -7,8 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.makers.makersbnb.model.Space;
 import com.makers.makersbnb.repository.SpaceRepository;
 
-import java.util.List;
-
 @RestController
 public class SpaceController {
     @Autowired
@@ -22,5 +20,4 @@ public class SpaceController {
         modelAndView.addObject("spaces", spaceRepository.findAll());
         return modelAndView;
     }
-
 }

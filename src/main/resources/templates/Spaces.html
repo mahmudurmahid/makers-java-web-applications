@@ -9,12 +9,14 @@
 <body>
 
 <h1>Here are our spaces</h1>
-<h3 th:text="${nSpaces} + ' spaces are waiting to be discovered'"></h3>
 
-<h4>Recent reviews</h4>
 <ul>
     <!-- using th:each we tell Thymeleaf to render an li for each review -->
-    <li th:each="review : ${reviews}" th:text="${review}"></li>
+    <li th:each="space : ${spaces}">
+        <strong th:text="${space.name}"></strong> -
+        <span th:text="${space.description}"></span>
+        (<span th:text="'£' + ${space.price}"></span> per night)
+    </li>
 </ul>
 
 </body>
