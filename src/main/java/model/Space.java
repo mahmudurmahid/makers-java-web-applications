@@ -13,6 +13,7 @@ public class Space {
     private String name;
     private String description;
     private BigDecimal price;
+    private String rules;
     public Space() {}
 
     public Space(String name, String description, BigDecimal price) {
@@ -40,5 +41,12 @@ public class Space {
     }
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public String getRules() {
+        return this.rules = rules;
+    }
+    public void setRules() {
+        this.rules = rules;
     }
 }
